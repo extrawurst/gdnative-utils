@@ -1,9 +1,9 @@
 #[macro_use]
 pub mod macros;
 pub mod extensions;
-pub mod gdu;
 
-use crate::gdu::*;
+pub use extensions::tref::RefExtension;
+
 use gdnative::prelude::*;
 pub fn test() -> Option<()> {
     let res = load!("" as PackedScene)
