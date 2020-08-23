@@ -21,6 +21,13 @@ macro_rules! cast {
 }
 
 #[macro_export]
+macro_rules! free {
+    ($node:expr) => {
+        unsafe { $node.assume_safe().queue_free() }
+    };
+}
+
+#[macro_export]
 macro_rules! load {
     ($path:tt as $cls:ty) => {
         unsafe {
