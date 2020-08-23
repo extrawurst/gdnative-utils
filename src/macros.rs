@@ -1,6 +1,6 @@
 #[macro_export]
 macro_rules! get_node {
-    ($path:tt from root as $cls:ty) => {};
+    ($path:tt from !root as $cls:ty) => {};
     ($path:tt from $node:ident as $cls:ty) => {
         unsafe {
             $node
