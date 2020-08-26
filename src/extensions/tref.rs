@@ -17,3 +17,13 @@ impl<T: GodotObject> RefExtension<T> for Ref<T> {
         unsafe { self.assume_safe() }
     }
 }
+
+pub trait TRefExtension<'a, T: GodotObject> {
+    fn safe(self) -> TRef<'a, T, Shared>;
+}
+
+impl<'a, T: GodotObject> TRefExtension<'a, T> for TRef<'a, T, Shared> {
+    fn safe(self) -> TRef<'a, T, Shared> {
+        self
+    }
+}

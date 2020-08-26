@@ -3,6 +3,7 @@ pub mod macros;
 pub mod extensions;
 
 pub use extensions::tref::RefExtension;
+pub use extensions::tref::TRefExtension;
 
 use gdnative::prelude::*;
 pub fn test() -> Option<()> {
