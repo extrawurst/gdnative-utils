@@ -4,6 +4,7 @@ pub mod extensions;
 
 pub use extensions::safe::RefExtension;
 pub use extensions::safe::TRefExtension;
+pub use extensions::safe::TRefNodeExtension;
 
 use gdnative::prelude::*;
 pub fn test() -> Option<()> {
