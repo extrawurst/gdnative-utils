@@ -1,8 +1,8 @@
 [package]
-name = "gdu"
+name = "godot-rust-utils"
 version = "0.1.0"
 authors = ["Friedrich"]
 edition = "2018"
 
 [dependencies]
-gdnative = "0.9.1"
+gdnative = "0.9"
