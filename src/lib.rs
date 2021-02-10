@@ -2,6 +2,7 @@
 pub mod macros;
 pub mod extensions;
 
+pub use extensions::safe::InstanceExtension;
 pub use extensions::safe::RefExtension;
 pub use extensions::safe::TRefExtension;
 pub use extensions::safe::TRefNodeExtension;

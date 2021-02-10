@@ -37,3 +37,18 @@ impl<T: GodotObject> TRefNodeExtension<T> for T {
         self
     }
 }
+
+pub trait InstanceExtension<T: NativeClass> {
+    fn safe<'a, 'r>(&'r self) -> RefInstance<'a, T, Shared>
+    where
+        AssumeSafeLifetime<'a, 'r>: LifetimeConstraint<<T::Base as GodotObject>::RefKind>;
+}
+
+impl<T: NativeClass> InstanceExtension<T> for Instance<T, Shared> {
+    fn safe<'a, 'r>(&'r self) -> RefInstance<'a, T, Shared>
+    where
+        AssumeSafeLifetime<'a, 'r>: LifetimeConstraint<<T::Base as GodotObject>::RefKind>,
+    {
+        unsafe { self.assume_safe() }
+    }
+}
